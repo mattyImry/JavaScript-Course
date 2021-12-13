@@ -80,7 +80,7 @@ const wes = {
     }
   }
 
-  // Callback Functions
+// Callback Functions
 // Click Callback
 const button1 = document.querySelector('.clickMe');
 const button2 = document.querySelector('.clickMe2');
@@ -92,6 +92,8 @@ function handle() {
 }
 button1.addEventListener('click', handle);
 
+// Callback Functions
+
 button2.addEventListener('click', function(){
     console.log('Puta')
 })
@@ -99,9 +101,9 @@ button2.addEventListener('click', function(){
 // Timer Callback with arrow function
 setTimeout(() => {
     console.log('DONE! Time to eat!');
-  }, 1000);
+  }, 4000);
 
-  // time call back normal function
+// time call back normal function
 setTimeout(function(){
     console.log('Done')
 },1000);

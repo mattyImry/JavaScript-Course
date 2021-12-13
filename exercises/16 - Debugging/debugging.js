@@ -5,20 +5,42 @@ const people = [
 ];
 
 people.forEach((person, index) => {
+  // debugger;
   console.log(person.name);
 });
 
 // Console Methods
 
+// console.table(people);
+// console.count(); //will count how many time a function run useful to know if a function has been called too many time like hovering
+
+//log many console methods
+
+//console.group(); 
+// people.forEach((person, index) => {
+//   console.groupCollapsed(`${person.name}`);
+//   console.log(person.country);
+//   console.log(person.cool);
+//   console.log('DONE');
+//   console.groupEnd(`${person.name}`);
+// });
+
+
 // Callstack
+
+
 
 // Grabbing Elements
 
 // Breakpoints
 
+
+
 // Scope
 
 // Network Requests
+
+
 
 // Break On Attribute
 
