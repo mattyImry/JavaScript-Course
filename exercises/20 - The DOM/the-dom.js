@@ -29,3 +29,8 @@ function toggleRound() {
 
 pic.addEventListener('click', toggleRound);
 
+pic.alt = 'Cute pup';
+
+const custom = document.querySelector('.custom');
+console.log(custom.dataset);
+
