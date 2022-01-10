@@ -14,12 +14,17 @@ function buyItem(){
 
 const buyButtons = document.querySelectorAll("button.buy");
 
-buyButtons.forEach(function (buyButton) {
-    buyButton.addEventListener("click", buyItem);
-  });
+function handleBuyButtonClick(event) {
+    console.log('you are buing it!');
+    console.log(event);
+}
 
-buyButtons.forEach(button =>{
-    button.addEventListener('click', () => {
-        console.log('You clicked');
-    })
+buyButtons.forEach(function(buyButton) {
+    buyButton.addEventListener('click', handleBuyButtonClick);
+})
+
+const photoEl = document.querySelector('.image');
+
+photoEl.addEventListener('mousemove', function(e) {
+    console.count(e.currentTarget);
 })
