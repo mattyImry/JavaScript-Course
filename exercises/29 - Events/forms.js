@@ -18,3 +18,14 @@ signupForm.addEventListener('submit', function(event) {
         event.preventDefault();
     }
 });
+
+
+const photo =  document.querySelector('.image');
+
+function handle(event) {
+    if (event.type === 'click' || event.key === 'Enter') {
+        console.log('you mug');
+    }
+}
+photo.addEventListener('click', handle);
+photo.addEventListener('keyup', handle);
