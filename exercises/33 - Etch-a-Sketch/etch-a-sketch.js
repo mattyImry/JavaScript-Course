@@ -41,8 +41,7 @@ function draw({ key }) {
     
     //move our x and y value dependingon the key pressed
     
-    ctx.lineTo(x,y);
-    ctx.stroke();
+    // 
 
     switch (key) {
         case 'ArrowUp':
@@ -61,6 +60,8 @@ function draw({ key }) {
         break;
     }
 
+    ctx.lineTo(x,y);
+    ctx.stroke();
 }
 // write a handler for the keys
 
