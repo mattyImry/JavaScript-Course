@@ -12,7 +12,6 @@ function obCallBack(payLoad) {
     // } else {
     //     button.disabled = true;
      }
-
 }
 
 const ob = new IntersectionObserver(obCallBack, {
