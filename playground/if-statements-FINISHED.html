@@ -82,7 +82,9 @@
     }
 
 
-    const values = [[], {}, -10, 1, 0, '', 'full string', ' ', undefined, NaN, null, '0️⃣', '💩'];
+    const values = [
+      [], {}, -10, 1, 0, '', 'full string', ' ', undefined, NaN, null, '0️⃣', '💩'
+    ];
 
     console.group('truthy or falsy values');
     values.forEach(value => {
@@ -103,7 +105,7 @@
     }
 
     // ternary
-    const count = 5234234;
+    const count = 565;
     // let word;
     // if (count === 1) {
     //   word = 'item';
@@ -121,7 +123,7 @@
     function showAdminBar() {
       console.log('Showing admin bar');
     }
-    const isAdmin = false;
+    const isAdmin = true;
     // isAdmin ? showAdminBar() : null;
 
     // AND AND TRICK!
@@ -129,10 +131,12 @@
       console.log('Running check 1');
       return true;
     }
+
     function check2() {
       console.log('Running check 2');
       return false;
     }
+
     function check3() {
       console.log('Running check 3');
       return true;
@@ -146,8 +150,9 @@
     // isAdmin ? showAdminBar() : null;
     isAdmin && showAdminBar();
 
-    if (isAdmin) { showAdminBar(); }
-
+    if (isAdmin) {
+      showAdminBar();
+    }
   </script>
 </body>
 
