@@ -9,6 +9,54 @@
 </head>
 
 <body>
+  <script>
+    function buzze() {
+      console.log('Dam')
+    }
+
+    //setTimeout(buzze, 500);
+
+    //setInterval(buzze, 100);
+
+
+    function setImmediateInterval(funcToRun, ms) {
+      // right away call that function
+      funcToRun();
+
+      //run a regular interval
+      return setInterval(funcToRun, ms);
+    }
+
+    //setImmediateInterval(buzze, 2000);
+
+
+    //TO STOP THE TIMER NEED TO SAVE THE FUNCTION TO BE USED IN clearTimeout IN A VARIABLE USING setTimeout()
+
+    function destroy() {
+      document.body.innerHTML = `<p> Destroy</p>`;
+    }
+
+    const bombTimer = setTimeout(destroy, 5000);
+
+    window.addEventListener('click', function () {
+      console.log('You clicked');
+
+      //how to stop
+
+      clearTimeout(bombTimer); // timer stopped destroy function not running
+    });
+
+    const poopInterval = setInterval(function () {
+      console.log('poop');
+      console.log('hehehe');
+    }, 100);
+
+    setTimeout(function () {
+      clearInterval(poopInterval);
+    }, 3000);
+  </script>
+
+
 
 </body>
 
