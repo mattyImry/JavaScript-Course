@@ -9,8 +9,33 @@
 </head>
 
 <body>
+  <input type="text " name="first" value="mat">
   <script>
+    age = 100;
+    person = {
+      age,
+      name: 'Wes',
+      'cool-dude': true,
+      'really-cool': false,
+      '777': true,
+      dog: 'snicker',
+      clothing: {
+        shirt: 10,
+        pants: 2,
+      }
+    };
 
+    //SQUARE BRACKET NOTATION USED IN CASE SOME KEYS ARE NOT ALLOWED IN DOT NOTATION LIKE COOL-DUDE. COOL DUDE WILL NEED A [] TO BE REFERENCED
+    //DOT NOTATION
+    person.job = 'web developer'; ///add a property
+    person.age = '50'; // overide a property
+
+    // assessing nested objects
+    console.log(person.clothing.shirt)
+
+    const nameInput = document.querySelector('[name="first"]');
+    const name = nameInput.value;
+    console.log(name);
   </script>
 </body>
 
