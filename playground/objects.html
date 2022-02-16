@@ -10,7 +10,9 @@
 
 <body>
   <input type="text " name="first" value="mat">
-  <script>
+
+  <script src="https://unpkg.com/lodash"></script> <!-- script neded to use deep cloning-->
+  <script> 
     age = 100;
     person = {
       age,
@@ -35,7 +37,70 @@
 
     const nameInput = document.querySelector('[name="first"]');
     const name = nameInput.value;
-    console.log(name);
+    //console.log(name);
+
+    const person1 = {
+      first: 'mat',
+      last: 'imeri',
+      clothing: {
+        shirt: 10,
+        pants:3
+
+      }
+    }
+
+    const person2 = {
+      first: 'mat',
+      last: 'imeri'
+    }
+
+    // const person3 = person1; //referencing to the original variable 
+    // person3.first = 'Gymmy'; //value will change in the original variable/object/array
+    // console.log(person3.first);
+    // console.log(person1.first);
+
+    //const person3 = {...person1}; //spread operator made a copy, wont' work if nested object
+
+    const person3 = _.cloneDeep(person1); // deep cloning using Lodash library
+    person3.first = 'Larry';
+
+
+    person.clothing.shirts = 100; // will change also the original 
+
+    const meatInventory = {
+      bacon: 2,
+      sausage: 3,
+      oyster: 10,
+    };
+
+    const veggieInventory = {
+      lettuce: 5,
+      tomatoes: 3,
+      oyster: 15,
+    };
+
+    //spreading the 2 above object and adding new property
+    const inventory = {
+      ...meatInventory,
+      ...veggieInventory,
+      oyster: 10
+    }
+
+    function doStuff(data) {
+      data = 'something else';
+      console.log(data);
+    }
+
+    function doStuff2(data) {
+      data.tomatoes = 10000000000;
+      console.log(data);
+    }
+
+    doStuff2(inventory); // carefull when modifying object via function as it will modify the object  
+                          // can cause bugs as you may not expect that
+                          //it does not happe with string , numbers or boolean only objects
+
+
   </script>
 </body>
 
