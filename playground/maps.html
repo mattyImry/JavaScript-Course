@@ -9,8 +9,38 @@
 </head>
 
 <body>
+
+  <ul class="prizes"></ul>
   <script>
 
+    const person1 = {
+      name: 'wes',
+      age: 200
+    };
+
+    const myMap = new Map();
+
+    //.set()
+    myMap.set('name', 'wes');
+    myMap.set(40, 'Cost of bread');
+    myMap.set(person1, 'boss');
+
+    //console.log(myMap);
+
+    const score = 300;
+    const prizes = new Map();
+    prizes.set(100, 'Bear');
+    prizes.set(200, 'Duck');
+    prizes.set(300, 'Car');
+    console.log(`you win a ${prizes.get(score)}`);
+
+    const ul = document.querySelector('.prizes');
+    for (const prize of prizes) {
+      console.log(prize[0], prize[1]);
+    }
+    //.has()
+
+    //.delete()
   </script>
 </body>
 
