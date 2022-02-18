@@ -11,7 +11,52 @@
 </head>
 
 <body>
+  <script>
+    const names = ['Mat', 'Gaia', 'Fla','Last'];
 
+    console.log(names[2]);
+    console.log(names.length);
+    console.log(names[names.length -1]);
+
+    names.push('Lyl');
+    console.log(names);
+
+    const names2 = [...names, 'Ostia'];
+    console.log(names2);
+
+    names.unshift('Bob'); // add to beginning of array
+    console.log(names);
+
+    const names3 = ['Lucy', ...names];
+    console.log(names3);
+
+    const bikes = ['bianchi', 'miele', 'panasonic', 'miyata'];
+
+    const newBikes = [
+      ...bikes.slice(0, 2),
+      'benotto',
+      ...bikes.slice(2)
+    ];
+    console.log(newBikes);
+
+    // //MUTATION METHOD
+
+    // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // //numbers.reverse();
+    // console.log(numbers);
+
+    // //COPY ORIGINAL ARRAY
+    // const numbersReversed = [...numbers].reverse();
+    // console.log(numbersReversed);
+
+    // //IMMUTABLE
+
+    // const pizza = numbers.slice(2, 4);
+    // console.log(pizza);
+
+    
+
+  </script>
 </body>
 
 </html>
