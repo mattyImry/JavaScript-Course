@@ -37,7 +37,53 @@
       'benotto',
       ...bikes.slice(2)
     ];
-    console.log(newBikes);
+
+    const newBikes2 = [
+      ...newBikes.slice(0, 3),
+      ...newBikes.slice(4)
+    ]
+    console.log(newBikes2);
+
+
+    const comments = [
+      { text: 'Cool Beans', id: 123 },
+      { text: 'Love this', id: 133 },
+      { text: 'Neato', id: 233 },
+      { text: 'good bikes', id: 333 },
+      { text: 'so good', id: 433 },
+    ];
+
+    function deleteComment(id, comment) {
+      // first find the index of the item in the array
+      const commentIndex = comments.findIndex(comment => comment.id === id);
+      // make a new array without that item in it
+      return [
+        ...comments.slice(0, commentIndex),
+        ...comments.slice(commentIndex + 1),
+      ];
+
+      
+
+
+      // return our new array
+    }
+
+    const flaIndex = names.findIndex(name => name === 'Fla');
+
+    const newNamesNoFla = [
+      //get everything up to kait index
+      ...names.slice(0, flaIndex),
+      // everything after fla index
+      ...names.slice(flaIndex + 1)
+    ]
+    console.log(newNamesNoFla);
+      
+
+
+    console.log(names);
+
+    console.log(flaIndex);
+
 
     // //MUTATION METHOD
 
