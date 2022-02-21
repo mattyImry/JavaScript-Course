@@ -111,22 +111,75 @@
 
     // Display all bun types with " or " - use join()
 
+    console.log(buns.join(' or '))
+
     // We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into a string
 
+    const foodString = "hot dogs,hamburgers,sausages,corn";
+    console.log(foodString.split(','));
+    
+
     // take the last item off toppings with pop()
-    // add it back with push()
+
+    const x = toppings.pop()
+    console.log(x);
+    console.log(toppings);
+
+     // add it back with push()
+    const back = toppings.push(x);
+    console.log(toppings);
+   
     // take the first item off toppings with shift()
+
+    const first = toppings.shift()
+    console.log(first);
+
     // add it back in with unshift()
+    toppings.unshift(first);
+    console.log(toppings);
+
     // Do the last four,but immutable (with spreads and new variables)
+
+    let newToppings = toppings.slice(0, toppings.length -1);
+    newToppings = [...newToppings, toppings[toppings.length - 1]];
 
 
     // Make a copy of the toppings array with slice()
+
+    const topCopy = toppings.slice(0);
     // Make a copy of the toppings array with a spread
+
+    const copy2 = [...toppings];
+
     // take out items 3 to 5 of your new toppings array with splice()
+
+    copy2.splice(3,5);
     // find the index of Avocado with indexOf() / lastIndexOf()
+
+    const avoIndex = toppings.indexOf('Avocado');
+    console.log(avoIndex);
+
+    // INDEX OF WORKS WITH ANYTYPE EXAMPLE
+
+    const wes = {name: 'wes'};
+    const people = [{name: 'scott'}, wes];
+    console.log(people.indexOf(wes))
+
     // Check if hot sauce is in the toppings with includes()
+
+    const isIn = toppings.includes('Hot Sauce')
+    console.log(isIn);
     // add it if it's not
+
+    if(!isIn) {
+      toppings.push('Hot Sauce');
+    }
+    console.log(toppings);
     // flip those toppings around with reverse()
+    toppings.reverse();
+
+    //non mutable
+    const topRev = [...toppings].reverse();
 
     /*
       Callback Methods
