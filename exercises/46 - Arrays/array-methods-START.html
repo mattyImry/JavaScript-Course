@@ -68,16 +68,18 @@
     // Make a function that creates a range from x to y with Array.from();
 
     function createRange(start, end) {
-      const range =  Array.from({ length: end - start },
-      function(item, index) {
-        return index + start;
-      });
+      const range = Array.from({
+          length: end - start
+        },
+        function (item, index) {
+          return index + start;
+        });
       return range;
     }
 
     const newRange = createRange(3, 8);
     //console.log(newRange);
-    
+
     // Check if the last array you created is really an array with Array.isArray();
 
     //console.log(Array.isArray(newRange));
@@ -117,7 +119,7 @@
 
     const foodString = "hot dogs,hamburgers,sausages,corn";
     console.log(foodString.split(','));
-    
+
 
     // take the last item off toppings with pop()
 
@@ -125,10 +127,10 @@
     console.log(x);
     console.log(toppings);
 
-     // add it back with push()
+    // add it back with push()
     const back = toppings.push(x);
     console.log(toppings);
-   
+
     // take the first item off toppings with shift()
 
     const first = toppings.shift()
@@ -140,7 +142,7 @@
 
     // Do the last four,but immutable (with spreads and new variables)
 
-    let newToppings = toppings.slice(0, toppings.length -1);
+    let newToppings = toppings.slice(0, toppings.length - 1);
     newToppings = [...newToppings, toppings[toppings.length - 1]];
 
 
@@ -153,7 +155,7 @@
 
     // take out items 3 to 5 of your new toppings array with splice()
 
-    copy2.splice(3,5);
+    copy2.splice(3, 5);
     // find the index of Avocado with indexOf() / lastIndexOf()
 
     const avoIndex = toppings.indexOf('Avocado');
@@ -161,8 +163,12 @@
 
     // INDEX OF WORKS WITH ANYTYPE EXAMPLE
 
-    const wes = {name: 'wes'};
-    const people = [{name: 'scott'}, wes];
+    const wes = {
+      name: 'wes'
+    };
+    const people = [{
+      name: 'scott'
+    }, wes];
     console.log(people.indexOf(wes))
 
     // Check if hot sauce is in the toppings with includes()
@@ -171,7 +177,7 @@
     console.log(isIn);
     // add it if it's not
 
-    if(!isIn) {
+    if (!isIn) {
       toppings.push('Hot Sauce');
     }
     console.log(toppings);
@@ -218,13 +224,13 @@
     // find all ratings that are above 2 with filter()
 
     function filterByMinRating(minRating) {
-        return function(singleFeedback) {
-          return singleFeedback.rating > minRating
-        }
+      return function (singleFeedback) {
+        return singleFeedback.rating > minRating
+      }
     };
 
     const goodReviews = feedback.filter(filterByMinRating(4));
-  
+
     console.table(goodReviews);
     // find all ratings that talk about a burger with filter()
 
@@ -265,18 +271,45 @@
 
     // Sort the prices with sort()
 
-    const productsSortedByPrice = Object.entries(prices).sort(function(a,b) {
+    const productsSortedByPrice = Object.entries(prices).sort(function (a, b) {
       const aPrice = a[1];
       const bPrice = b[1];
       return aPrice - bPrice;
-      
+
     });
     console.table(productsSortedByPrice);
-    
+
 
     /*
       Looping Methods (next)
     */
+
+    // toppings.forEach(topping => {
+    //   console.log(topping);
+    // })
+
+    function logTopping(topping, index, originalArray) {
+      const nextTopping = originalArray[index + 1];
+      const prevTopping = originalArray[index - 1];
+      // log the topping
+      console.log(topping);
+      // log the prev topping if there is one
+      prevTopping ? console.log(prevTopping) : null;
+
+      // log the next topping if there is one
+      nextTopping ? console.log(nextTopping) : null;
+      // if its the last item in the array, say good bye
+      index === originalArray.length - 1 ?
+        console.log('Goodbye') :
+        console.log('Getting the next Topping');
+
+      // index === originalArray.length && console.log('Goodbye');
+      console.log('-------🍕-------');
+    }
+
+    toppings.forEach(logTopping);
+
+    // Map, Filter, Reduce
   </script>
 </body>
 
