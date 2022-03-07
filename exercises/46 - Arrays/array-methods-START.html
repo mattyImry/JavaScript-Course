@@ -385,7 +385,10 @@
         name: `${person.names.first} ${person.names.last}`,
       }
     });
-    console.table(cleanPeople);
+
+    const over40 = cleanPeople.filter(person => person.age > 40)
+
+    console.table(over40);
   </script>
 </body>
 
