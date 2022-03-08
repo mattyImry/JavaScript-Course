@@ -163,10 +163,38 @@
       Looping Methods
     */
 
-
-
     const student = students.find(stud => stud.id === '565a')
     console.log(student);
+
+    //REDUCE
+
+    function tallyNumbers(tally, currentTotal) {
+      console.log(`The current tally is ${tally}`);
+      console.log(`The current tally is ${currentTotal}`);
+      console.log('----------');
+      // return the current tally plus the amount of this order
+
+      return tally + currentTotal;
+    }
+
+    const allOrders = orderTotals.reduce(tallyNumbers, 0);
+
+    function inventoryReducer(totals, item) {
+
+      // increment the type by 1
+      totals[item.type] = totals[item.type] + 1 || 1;
+
+      // totals.shirt ? totals.shirt + 1 : totals.shirt = 1;
+
+      // return the totals, so the next loop can use it
+      return totals;
+    }
+
+    const inventoryCounts = inventory.reduce(inventoryReducer, {})
+    console.log(inventoryCounts);
+
+    const totalInventoryPrice = inventory.reduce((acc, item) => acc + item.price, 0)
+    console.log(totalInventoryPrice);
   </script>
 </body>
 
