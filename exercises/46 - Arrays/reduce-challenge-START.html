@@ -557,8 +557,9 @@
       © 2005-2019 Mozilla and individual contributors.Content is available under these licenses.
     `;
 
-    const everything = text.split('');
 
+    const everything = text.split('');
+    // checking if character is present only the one selected in regex
     function isValidChar(char) {
       return (char.match(/[a-z0-9]/i));
     }
