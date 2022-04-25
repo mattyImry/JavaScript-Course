@@ -43,4 +43,9 @@ function transformText(text) {
 
 
 textarea.addEventListener('input', e => transformText(e.target.value));
-filterInputs
+
+filterInputs.forEach(input =>
+    input.addEventListener('input', () => {
+        transformText(textarea.value);
+})
+);
