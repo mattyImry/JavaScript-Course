@@ -9,7 +9,22 @@
 </head>
 
 <body>
+  <script>
+    const person = {
+      name: 'Matt',
+      sayHi() {
+        console.log(`hey ${this.name}`);
+      }
+    };
 
+    const jenna = {
+      name: 'Jenna'
+    }
+
+    const sayHi = person.sayHi.bind(jenna)
+
+    //QS Example
+  </script>
 </body>
 
 </html>
