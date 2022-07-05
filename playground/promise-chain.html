@@ -47,6 +47,31 @@
             console.log('Done');
         })
 
+        const go2 = document.querySelector('.go');
+        go2.addEventListener('click', animate2);
+
+
+        async function animate2(e) {
+            const el = e.currentTarget;
+            //1 Change the text to go when clicked
+            el.textContent = 'GO!'
+            // make a circle after 2 seconds
+            await wait(200)
+            el.classList.add('circle');
+            await wait(500);
+            //make it red after 0.5 sec
+            el.classList.add('red');
+            await wait(250);
+            //make it square after 0.s5s   
+            el.classList.remove('circle');
+            await wait(550);
+            el.classList.remove('red');
+            el.classList.add('purple');
+            await wait(300);
+            el.classList.add('fadeout');
+            await wait(1000);
+        }
+
         function animate(e) {
             const el = e.currentTarget;
             //1 Change the text to go when clicked
@@ -80,7 +105,7 @@
         }
 
         const go = document.querySelector('.go');
-        go.addEventListener('click', animate);
+        go.addEventListener('clickXXX', animate);
 
         //1 Change the text to go when clicked
         go.addEventListener('clickXXXXX', function go(e) {
