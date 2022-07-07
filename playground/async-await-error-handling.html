@@ -32,6 +32,48 @@
       });
     }
 
+    // async function go() {
+    //   try {
+    //     const pizza = await makePizza(['pineapple']);
+    //     console.log(pizza);
+    //   } catch (err) {
+    //     console.log('noooo');
+    //     console.log(err);
+
+    //   }
+
+    // }
+
+    function handleError(err) {
+      console.log('ohhh nooo');
+      console.log('err');
+    }
+
+    async function go() {
+      const pizza = await makePizza(['pineapple']);
+      console.log(pizza);
+      return pizza;
+    }
+
+    // go().then(result => {
+    //   console.log('yey')
+    // }).catch(handleError);
+
+    // HIGHER ORDER FUNCTION its a function that returns another function
+    //with aync function it is better to create your functions the
+    //catch it at run time
+    //go().catch(handleError);
+    // make a safe function with HIGHER ORDER FUNCTION
+
+    function makeSafe(fn, errorHandler) {
+      return function () {
+        fn().catch(errorHandler)
+      }
+    }
+
+    const safeGo = makeSafe(go, handleError);
+
+    safeGo();
   </script>
 </body>
 
